@@ -1,5 +1,6 @@
 package com.daleel.studentapp.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,14 @@ public class StudentService {
 
 	@Autowired
 	StudentRepository studentRepo;
+	
+	public List<Student> getDummyStudents() {
+		System.out.println("entered in getDummyStudents");
+		List<Student> list=new ArrayList<Student>();
+		Student st1=new Student("a1","b1","c1");
+		list.add(st1);
+		return list;
+	}
 
 	public List<Student> getAllStudents() {
 		System.out.println("entered in getAllStudents");

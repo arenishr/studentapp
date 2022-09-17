@@ -23,10 +23,16 @@ import com.mongodb.DBObject;
 @DirtiesContext
 @TestPropertySource(properties = "spring.mongodb.embedded.version=3.5.5")
 public class StudentApplicationTests {
-
-	@DisplayName("given object to save"
-	        + " when save object using MongoDB template"
-	        + " then object is saved")
+	
+//	@Mock
+//	@Autowired
+//	StudentRepository studentrepo;
+//	
+//	@Autowired
+//    MockMvc mockMvc;
+    
+	@DisplayName("To test the given object is saving"
+	        + " using MongoDB template")
 	@Test
 	public void test(@Autowired MongoTemplate mongoTemplate) {
 		  // given
@@ -42,5 +48,26 @@ public class StudentApplicationTests {
             .containsOnly("value");
 	}
 	
+	
+//	@Test
+//	public void getAllRecords_success() throws Exception {
+//		Student RECORD_1= new Student("a1","b1","c1");
+//		Student RECORD_2= new Student("a2","b2","c2");
+//		Student RECORD_3= new Student("a3","b3","c3");
+//	    List<Student> records = new ArrayList<>(Arrays.asList(RECORD_1, RECORD_2, RECORD_3));
+//	    
+//	    Mockito.when(studentrepo.findAll()).thenReturn(records);
+//	    
+//	    mockMvc.perform(MockMvcRequestBuilders
+//	            .get("/patient")
+//	            .contentType(MediaType.APPLICATION_JSON))
+//	            .andExpect(status().isOk())
+//	            .andExpect(jsonPath("$", hasSize(3)))
+//	            .andExpect(jsonPath("$[2].firstName", is("a3")));
+//	}
+	
+	
+	
 
 }
+
