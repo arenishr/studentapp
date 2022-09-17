@@ -18,6 +18,7 @@ public class StudentService {
 	StudentRepository studentRepo;
 
 	public List<Student> getAllStudents() {
+		System.out.println("entered in getAllStudents");
 		return studentRepo.findAll();
 	}
 
