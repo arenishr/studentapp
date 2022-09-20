@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.daleel.studentapp.model.Student;
@@ -17,6 +19,10 @@ public class StudentService {
 
 	@Autowired
 	StudentRepository studentRepo;
+	
+	public ResponseEntity<String> getWelcome() {
+		return new ResponseEntity<String>("welcome", HttpStatus.OK);
+	}
 	
 	public List<Student> getDummyStudents() {
 		System.out.println("entered in getDummyStudents");
